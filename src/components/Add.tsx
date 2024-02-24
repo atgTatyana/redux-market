@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { setForm, submitForm, setAdd } from "../redux/changeMarket";
 
-interface IProductItem {
+export interface IProductItem {
   id: number,
   img: string,
   price: number,
@@ -15,13 +15,13 @@ interface IMarket {
   add: boolean,
 }
 
-interface IState {
+export interface IState {
   market: IMarket,
 }
 
 export const Add = () => {
   const dispatch = useDispatch();
-  const { productItem } = useSelector<IState>((state) => state.market);
+  const { productItem } = useSelector((state: IState) => state.market);
 
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -43,8 +43,6 @@ const initialState = {
 };
 
 const marketReducer = (state = initialState, action) => {
-  console.log('state = ', state);
-
   switch (action.type) {
     case SET_ADD:
       return {
@@ -60,9 +58,9 @@ const marketReducer = (state = initialState, action) => {
 
     case SAVE_PRODUCT_ITEM:
         state.productItem.id = state.productList.length;
-        state.productList.push(state.productItem);
         return {
           ...state,
+          productList: [...state.productList, state.productItem],
         }
 
     default:

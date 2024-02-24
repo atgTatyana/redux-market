@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Add } from "./Add";
+import { Add, IState } from "./Add";
 import { setAdd } from "../redux/changeMarket";
 
 export const Market = () => {
   const dispatch = useDispatch();
-  const { productList, add } = useSelector((state) => state.market);
+  const { productList, add } = useSelector((state: IState) => state.market);
 
   const handleAdd = () => {
     setAdd(dispatch)(true);
